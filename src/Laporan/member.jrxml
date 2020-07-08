@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="533df785-92b9-4707-b9ef-b07bde857353">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     member.`kd_member` AS member_kd_member,
+     member.`nama_member` AS member_nama_member,
+     member.`jenis_member` AS member_jenis_member,
+     member.`potongan` AS member_potongan,
+     member.`biaya` AS member_biaya
+FROM
+     `member` member]]>
+	</queryString>
+	<field name="member_kd_member" class="java.lang.String"/>
+	<field name="member_nama_member" class="java.lang.String"/>
+	<field name="member_jenis_member" class="java.lang.String"/>
+	<field name="member_potongan" class="java.lang.Integer"/>
+	<field name="member_biaya" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="106" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="16069524-fca5-4625-a321-375571130310" x="205" y="11" width="360" height="38"/>
+				<textElement>
+					<font fontName="Times New Roman" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUMBER AGUNG Playstation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="16069524-fca5-4625-a321-375571130310" x="233" y="49" width="322" height="38"/>
+				<textElement>
+					<font fontName="Times New Roman" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jl. KH.Ahmad Dahlan No 11 Sukoharjo]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="1c492d15-29ac-4c96-a4af-5623267c0b24" x="75" y="103" width="620" height="1"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="120" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="16069524-fca5-4625-a321-375571130310" x="269" y="14" width="247" height="38"/>
+				<textElement>
+					<font fontName="Times New Roman" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DAFTAR MEMBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4f63e184-23ba-4c2b-92c1-1322ad5f564f" x="96" y="86" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Member]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2e68b188-5e94-4be3-a2e1-a442581d465e" x="233" y="86" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Member]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f2cb1583-51ba-4581-b8fc-30caa8ac9fc0" x="349" y="86" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jenis Member]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7f94b8c3-c9ed-43ba-8951-4ab81ab6c40b" x="465" y="86" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Potongan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4da05d4c-f43a-49ce-82da-088e784b6e95" x="595" y="86" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Biaya Daftar]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="1c492d15-29ac-4c96-a4af-5623267c0b24" x="75" y="75" width="620" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="1c492d15-29ac-4c96-a4af-5623267c0b24" x="75" y="114" width="620" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement uuid="5528c8cb-2cdf-43eb-b6f2-7a68dc8de755" x="96" y="6" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_kd_member}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a62be8bc-a0c3-4595-abf3-7e3d25185b71" x="233" y="6" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_nama_member}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7c1e1da6-1741-4a10-b2a0-0f1a998c8560" x="349" y="6" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_jenis_member}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f24966f7-dff0-498b-8197-e740020d18c5" x="465" y="6" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_potongan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="efcbadfe-fc4d-45e8-8582-d4d21e80a485" x="595" y="6" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_biaya}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="1c492d15-29ac-4c96-a4af-5623267c0b24" x="75" y="35" width="620" height="1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="66" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="140" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

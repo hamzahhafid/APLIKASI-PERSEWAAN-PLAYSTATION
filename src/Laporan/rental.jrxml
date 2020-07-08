@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9628a30e-d752-4bd1-8484-6d63d99c4a90">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="kd_rental" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     rental.`kdrental` AS rental_kdrental,
+     rental.`nm_pelanggan` AS rental_nm_pelanggan,
+     rental.`jenis` AS rental_jenis,
+     rental.`biaya` AS rental_biaya,
+     rental.`lama` AS rental_lama,
+     rental.`total` AS rental_total,
+     rental.`jaminan` AS rental_jaminan,
+     rental.`nohp` AS rental_nohp,
+     rental.`alamat` AS rental_alamat
+FROM
+     `rental` rental
+WHERE
+   rental.kdrental = $P{kd_rental}]]>
+	</queryString>
+	<field name="rental_kdrental" class="java.lang.String"/>
+	<field name="rental_nm_pelanggan" class="java.lang.String"/>
+	<field name="rental_jenis" class="java.lang.String"/>
+	<field name="rental_biaya" class="java.lang.Integer"/>
+	<field name="rental_lama" class="java.lang.Integer"/>
+	<field name="rental_total" class="java.lang.Integer"/>
+	<field name="rental_jaminan" class="java.lang.String"/>
+	<field name="rental_nohp" class="java.lang.String"/>
+	<field name="rental_alamat" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="113" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="16069524-fca5-4625-a321-375571130310" x="211" y="12" width="360" height="38"/>
+				<textElement>
+					<font fontName="Times New Roman" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUMBER AGUNG Playstation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="16069524-fca5-4625-a321-375571130310" x="239" y="50" width="322" height="38"/>
+				<textElement>
+					<font fontName="Times New Roman" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jl. KH.Ahmad Dahlan No 11 Sukoharjo]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="1c492d15-29ac-4c96-a4af-5623267c0b24" x="82" y="99" width="620" height="1"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="154" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="16069524-fca5-4625-a321-375571130310" x="341" y="0" width="112" height="38"/>
+				<textElement>
+					<font fontName="Times New Roman" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RENTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3f0e6f48-5ee5-44b0-a6cd-d72de26a910d" x="33" y="54" width="89" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Rental]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a86a505f-0bee-49d7-808b-3d503c9c8603" x="33" y="84" width="122" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Pelanggan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="34cb3c83-f7bf-4803-b137-4837d9fd630b" x="137" y="123" width="89" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BIAYA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8910bbdb-abe5-4fa9-a4d5-ee018bf4f0d7" x="253" y="123" width="89" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="32df2f8f-5a09-428e-a383-ce84445e1694" x="373" y="123" width="89" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6a87d124-4630-48df-a9c5-f73e19f8ed6e" x="481" y="123" width="89" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JAMINAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3eca5a35-ad45-4cd7-9933-7a6f7c583ac7" x="588" y="123" width="89" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO HP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9057b1af-a959-48fe-8b68-cdd6f449b6f7" x="689" y="123" width="89" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALAMAT]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="dbdcaabc-16c8-4883-98e1-15bb26e8ef96" x="178" y="54" width="122" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rental_kdrental}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ab481992-7995-4808-a811-fa1c2e72f754" x="178" y="84" width="188" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rental_nm_pelanggan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="606250bd-f413-4504-8657-eaca75236b75" x="20" y="123" width="89" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JENIS]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="1c492d15-29ac-4c96-a4af-5623267c0b24" x="20" y="113" width="758" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="1c492d15-29ac-4c96-a4af-5623267c0b24" x="20" y="149" width="758" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="3f0e6f48-5ee5-44b0-a6cd-d72de26a910d" x="166" y="54" width="28" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3f0e6f48-5ee5-44b0-a6cd-d72de26a910d" x="166" y="84" width="28" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement uuid="c09ebab8-660b-4437-8ca0-8d3900871935" x="20" y="1" width="89" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rental_jenis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="334e127e-33f5-4ba2-b572-40d6eea5527c" x="137" y="1" width="89" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rental_biaya}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="18629421-4d82-487f-b5a9-470e9a689894" x="253" y="1" width="89" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rental_lama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="30f885cc-5cef-426f-919b-ceebb5c8e72f" x="373" y="1" width="89" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rental_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="dd4ce5ab-fca4-4bca-bb35-b0811c9505bf" x="481" y="1" width="89" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rental_jaminan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="595b767e-57cc-4a34-aa2c-b304cfd3feb2" x="588" y="1" width="89" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rental_nohp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="41171df0-e44e-4c98-a872-07674b99cd53" x="689" y="1" width="89" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rental_alamat}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="1c492d15-29ac-4c96-a4af-5623267c0b24" x="20" y="32" width="758" height="1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="72" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
